@@ -1,9 +1,7 @@
-# checktshegshad
-說明:
-檢查原文
-
+# checktshegshad檢查原文
 
 步驟:
+
 1.將資料夾放進/checktshegshad/data的路徑目錄中。
 
 2.開啟Command Prompt於/checktshegshad路徑中執行node checktshegshad.js。
@@ -17,43 +15,49 @@
   會產生"result"資料夾，進入裡面的"example資料夾後，會看見"ckeck_example.xml"檔案，
   
   輸出的檔案格式依序為<pb id>，第幾行，疑似錯誤的描述：
-
-    1.21b,2,line end shad without space 
-    表示在 "example.xml" 檔案 <pb id=1.21b/>，第2行 的結尾是 "shad 後面沒有空白鍵"
   
-    1.152a,5,line end no tsheg or shad 
-    表示在 "example.xml" 檔案 <pb id=1.152a/>，第5行 的結尾是 "沒有 tsheg 也沒有 shad"
+
+說明:
+
+1.21b,2,line end shad without space 
+
+表示在 "example.xml" 檔案 <pb id=1.21b/>，第2行 的結尾是 "shad 後面沒有空白鍵"
   
-  疑似錯誤的描述種類有：
+1.152a,5,line end no tsheg or shad 
 
-    "line end tsheg space" // 該行最後的 tsheg 後面有空白鍵
+表示在 "example.xml" 檔案 <pb id=1.152a/>，第5行 的結尾是 "沒有 tsheg 也沒有 shad"
+  
+疑似錯誤的描述種類有：
 
-    "line end shad without space" // 該行最後的 shad 後面沒有空白鍵
+"line end tsheg space" // 該行最後的 tsheg 後面有空白鍵
 
-    "tsheg or shad at beginning" // 該行最前面有 tsheg 或 shad
- 
-    "line end ། །(or།།) and ༄༅ at next line" // 該行最後有 ། ། 或 །།，下一行前面有雲頭符
+"line end shad without space" // 該行最後的 shad 後面沒有空白鍵
 
-    "sentence།།sentence or །།།" // 句子裡面出現沒有空格的 །། 或出現 །།།
+"tsheg or shad at beginning" // 該行最前面有 tsheg 或 shad
 
-    "sentence།sentence" // 句子裡面出現沒有空格的 །
+"line end ། །(or།།) and ༄༅ at next line" // 該行最後有 ། ། 或 །།，下一行前面有雲頭符
 
-    "line end no tsheg or shad" // 該行最後沒有 tsheg 或 shad
+"sentence།།sentence or །།།" // 句子裡面出現沒有空格的 །། 或出現 །།།
 
-    "ང།" // 該行最後的 ང 直接接 shad
+"sentence།sentence" // 句子裡面出現沒有空格的 །
 
-    "line end ང༌(u0f0c)" // 該行最後的 ང 只有加 tsheg，沒有 shad
+"line end no tsheg or shad" // 該行最後沒有 tsheg 或 shad
 
-    "ངོ།" // 該行最後的 ངོ 直接接 shad
+"ང།" // 該行最後的 ང 直接接 shad
 
-    "line end ངོ༌(u0f0c)" // 該行最後的 ངོ 只有加 tsheg，沒有 shad
+"line end ང༌(u0f0c)" // 該行最後的 ང 只有加 tsheg，沒有 shad
 
-    "line end དང་(u0f0b)" // 該行最後的 དང 只有加 tsheg，沒有 shad
+"ངོ།" // 該行最後的 ངོ 直接接 shad
 
-    "line end །་" // 該行最後是 །་ shad 在 tsheg 前面
+"line end ངོ༌(u0f0c)" // 該行最後的 ངོ 只有加 tsheg，沒有 shad
 
-    "line end ex. ཀ་།" // 不是 ང 或 ངོ 的字，後面接 ་། tsheg 和 shad
+"line end དང་(u0f0b)" // 該行最後的 དང 只有加 tsheg，沒有 shad
+
+"line end །་" // 該行最後是 །་ shad 在 tsheg 前面
+
+"line end ex. ཀ་།" // 不是 ང 或 ངོ 的字，後面接 ་། tsheg 和 shad
 
 如果結果出現以下情形，表示原檔案的 <pb id=...> 後面沒有換行，
 
 9.254b <no please_check_original_file="didn't change line behind <pb id=...> in the original file;    原文的<pb id=...>後面沒有換行"/>  གཞན་ནི་སྔ་མ་བཞིན་ནོ། །ལྟུང་བྱེད་བདུན་པའི་དྲུག་པ་རྫོགས་སྷོ།།                <head n="3" t="ལྟུང་བྱེད་བདུན་པའི་བདུན་པ་འཆད་པ།" type="ltungbyed" lv="5.4.74" zh_pb="9.625"/>གླེང་གཞི་ནི་མཉན་ཡོད་ནའོ། །དེའི་ཚེ་དགེ་སློང་མ་རྣམས་ལ་འདི་ལྟ་བུའི་གདིང་བ་མང་པོ་བྱུང་སྟེ། གདིང་བ་འདི་ནི་ཧ་ཅང་རིང་ཆེས་སོ་ཞེས་དེ་བོར་ནས་གཞན་བྱེད་དུ་
+
