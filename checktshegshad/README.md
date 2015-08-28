@@ -10,7 +10,7 @@
 
 4.以"example.xml"檔案為例，一開始我們在"data"資料夾中放入"example"資料夾，裡面有"example.xml"檔案。
 
-  於命令列/checktshegshad路徑中執行nodechecktshegshad.js後，
+  於命令列/checktshegshad路徑中執行node checktshegshad.js後，
   
   會產生"result"資料夾，進入裡面的"example資料夾後，會看見"ckeck_example.xml"檔案，
   
