@@ -14,18 +14,18 @@
   
   會產生"result"資料夾，進入裡面的"example資料夾後，會看見"ckeck_example.xml"檔案，
   
-  輸出的檔案格式依序為<pb id>，第幾行，疑似錯誤的描述：
+  輸出的檔案格式依序為pb id，第幾行，疑似錯誤的描述：
   
 
 說明:
 
 1.21b,2,line end shad without space 
 
-表示在 "example.xml" 檔案 <pb id=1.21b/>，第2行 的結尾是 "shad 後面沒有空白鍵"
+表示在 "example.xml" 檔案 pb id=1.21b，第2行 的結尾是 "shad 後面沒有空白鍵"
   
 1.152a,5,line end no tsheg or shad 
 
-表示在 "example.xml" 檔案 <pb id=1.152a/>，第5行 的結尾是 "沒有 tsheg 也沒有 shad"
+表示在 "example.xml" 檔案 pb id=1.152a，第5行 的結尾是 "沒有 tsheg 也沒有 shad"
   
 疑似錯誤的描述種類有：
 
