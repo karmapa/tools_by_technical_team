@@ -1,6 +1,6 @@
 # checktshegshad檢查原文
 
-影片 [video](https://youtu.be/g1hmlGHYqk0)
+影片==> [video](https://youtu.be/g1hmlGHYqk0)
 
 步驟:
 
