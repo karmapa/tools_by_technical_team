@@ -16,7 +16,7 @@ var splitbySutra=function(m,fn){
 	var name=fn.split(".");
 	var arr=content.split("#");
 	arr.map(function(sutra){
-		sutra.replace(/M\d+/,function(id){   //M
+			sutra.replace(/[a-zA-Z]\d+/,function(id){   //M
 			writeFile("./splited/"+name[0]+"/"+name[0]+"_sutra"+id+"."+name[1],sutra);
 		});
 	});

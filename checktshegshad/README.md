@@ -31,6 +31,8 @@
   
 疑似錯誤的描述種類有：
 
+"shad space shad space" // 該行最後為 shad 加 space 加 shad，後面有space
+
 "line end tsheg space" // 該行最後的 tsheg 後面有空白鍵
 
 "line end shad without space" // 該行最後的 shad 後面沒有空白鍵
