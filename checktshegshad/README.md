@@ -1,6 +1,8 @@
 # checktshegshad檢查原文
 
 影片==> [video](https://youtu.be/g1hmlGHYqk0)
+(修改程式後的影片補充：程式檢查出來的 "每行最後的 shad 後面沒有空白鍵" 錯誤，
+ 在執行程式後會獨立歸納在 "endshadnospace.xml" 檔案)
 
 步驟:
 
