@@ -4,6 +4,7 @@ var glob=require("glob");
 var bom=String.fromCharCode(0xfeff);
 //var lst=fs.readFileSync(lstfile,"utf8").replace(bom,'').split(/\r?\n/);
 var lastdepth=0;
+var lines;
 var sutraId=/<sutra id="(J\d+[ab]?)".>/g;
 var pat2=/<head.*?\/>/g;
 
@@ -19,7 +20,7 @@ var doHead=function(m){
 	if ( m.match(/st=/) ) stitle=m.match(/st="(.*?)"/)[1];
 	if ( m.match(/zh=/) ) zh=m.match(/zh[_pb]*="(\d+\.\d+)"/)[1];
 
-	console.log("head:"+depth, "t:", title, "st:", stitle, "zh:", zh, _fn);
+	console.log("head:"+depth, "t:", title, "st:", stitle, "zh:", zh, _fn, "("+lines+")"); 
 }
 
 var doSutraId=function(m,m1){
@@ -32,6 +33,7 @@ var parseFile=function(fn) {
 	for (var i=0;i<arr.length;i++) {
 		//if (arr[i].indexOf("<head")==-1) continue;
 		//console.log(arr[i]);
+		lines=i;
 		arr[i].replace(sutraId,doSutraId);
 		arr[i].replace(pat2,doHead);
 
