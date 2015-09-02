@@ -23,6 +23,8 @@ var readFiles=function(folder){
 	var fileLst=fs.readdirSync("./data/"+folder);
 	var out=[];
 	for(var j=0;j<fileLst.length;j++){
+		out.push(fileLst[j]);
+		outshad.push(fileLst[j]);
 		//var out=[];					
 		var text=fs.readFileSync("./data/"+folder+"/"+fileLst[j],"utf8");//string
 		var linesArrs=toLines(text);//[[page1 line1,page1 line2],[page2 line1,page2 line2]]
