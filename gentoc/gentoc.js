@@ -20,7 +20,7 @@ var doHead=function(m){
 	if ( m.match(/st=/) ) stitle=m.match(/st="(.*?)"/)[1];
 	if ( m.match(/zh=/) ) zh=m.match(/zh[_pb]*="(\d+\.\d+)"/)[1];
 
-	console.log("head:"+depth, "t:", title, "st:", stitle, "zh:", zh, _fn, "("+lines+")"); 
+	console.log("head:"+depth, "t:", title, "st:", stitle, "zh:", zh, _fn, "(",lines+1,")"); 
 }
 
 var doSutraId=function(m,m1){
