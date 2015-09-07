@@ -1,10 +1,9 @@
 var fs=require("fs");
 var muluArray=fs.readFileSync("./mulu.html","utf8").replace(/<sutraid/g,"~<sutraid").split("~");
-var out=[];
+var objL={};
 
 var sutraIdKey=function(arr){
-	for(i=1;i<arr.length;i++){
-		var objL={};
+	for(i=1;i<arr.length;i++){		
 		var objS={};
 		var id=arr[i].match(/"(J\d+.*?)"/)[1];
 		var tValue="";
@@ -14,12 +13,11 @@ var sutraIdKey=function(arr){
 		objS["tname"]=tValue;
 		objS["sname"]=sValue;
 		objL[id]=objS;
-		out.push(objL);
 	}
 }
 
 sutraIdKey(muluArray);
-fs.writeFileSync("./mulu.json",JSON.stringify(out,""," "),"utf8");
+fs.writeFileSync("./mulu.json",JSON.stringify(objL,""," "),"utf8");
 //[{id:{tValue:"",sValue:""}},{id:{tValue:"",sValue:""}}]
 //""
 //intital file lacks of J485 J788
