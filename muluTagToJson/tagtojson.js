@@ -9,8 +9,8 @@ var sutraIdKey=function(arr){
 		var id=arr[i].match(/"(J\d+.*?)"/)[1];
 		var tValue="";
 		var sValue="";
-		if(arr[i].match(/<tname>[\t\s]*([\u0f00-\u0fff\(\) ]+( །)*)[\t\s]*<\/tname>/)) tValue=arr[i].match(/<tname>[\t\s]*([\u0f00-\u0fff\(\) ]+( །)*)[\t\s]*<\/tname>/)[1];
-		if(arr[i].match(/<sname>[\t\s]*([\u0f00-\u0fff\(\) ]+( །)*)[\t\s]*<\/sname>/)) sValue=arr[i].match(/<sname>[\t\s]*([\u0f00-\u0fff\(\) ]+( །)*)[\t\s]*<\/sname>/)[1];
+		if(arr[i].match(/<tname>[\t\s]*([\u0f00-\u0fff\(\) \u00A0]+( །)*)[\t\s]*<\/tname>/)) tValue=arr[i].match(/<tname>[\t\s]*([\u0f00-\u0fff\(\) \u00A0]+( །)*)[\t\s]*<\/tname>/)[1];
+		if(arr[i].match(/<sname>[\t\s]*([\u0f00-\u0fff\(\) \u00A0]+( །)*)[\t\s]*<\/sname>/)) sValue=arr[i].match(/<sname>[\t\s]*([\u0f00-\u0fff\(\) \u00A0]+( །)*)[\t\s]*<\/sname>/)[1];
 		objS["tname"]=tValue;
 		objS["sname"]=sValue;
 		objL[id]=objS;
@@ -22,4 +22,4 @@ sutraIdKey(muluArray);
 fs.writeFileSync("./mulu.json",JSON.stringify(out,""," "),"utf8");
 //[{id:{tValue:"",sValue:""}},{id:{tValue:"",sValue:""}}]
 //""
-//J485
+//intital file lacks of J485 J788
