@@ -7,10 +7,12 @@ var lastdepth=0;
 var lines;
 var sutraId=/<sutra id="(J\d+[ab]?)".>/g;
 var pat2=/<head.*?\/>/g;
+var sutra_arr=[];
+var head_arr=[];
 
 var _fn="";
 var doHead=function(m){
-	console.log(m);
+//	console.log(m);
 	var stitle="no st", zh="no zh";
 	var depth=parseInt( m.match(/n="(\d+)"/)[1] );
 	var title=m.match(/[^s]t="(.*?)"/)[1];
@@ -19,12 +21,31 @@ var doHead=function(m){
 	//while (--depth) space+="  ";
 	if ( m.match(/st=/) ) stitle=m.match(/st="(.*?)"/)[1];
 	if ( m.match(/zh=/) ) zh=m.match(/zh[_pb]*="(\d+\.\d+)"/)[1];
-
-	console.log("head:"+depth, "t:", title, "st:", stitle, "zh:", zh, _fn, "(",lines+1,")"); 
+	head_arr.push(/*m+"\n"+*/"head:"+depth+" t: "+title+" st: "+stitle+" zh: "+zh+" "+_fn+" ("+(lines+1)+")"); 
+//	console.log("head:"+depth, "t:", title, "st:", stitle, "zh:", zh, _fn, "(",lines+1,")"); 
 }
 
 var doSutraId=function(m,m1){
-	console.log("sutra id:",m1);
+	sutra_arr.push("sutra id: "+m1);
+//	console.log("sutra id:",m1);
+}
+
+var doConsole=function(){
+	var k=0;
+	var sutra_con,head_con;
+	if(sutra_arr.length>head_arr.length){
+		k=sutra_arr.length;
+	}else{
+		k=head_arr.length;
+	}
+	for(var j=0;j<k;j++){
+		sutra_con=sutra_arr[j]||"";
+		head_con=head_arr[j]||"";
+		if(sutra_con!="") console.log(sutra_con);
+		if(head_con!="") console.log(head_con);
+	}
+	sutra_arr=[];
+	head_arr=[];
 }
 
 var parseFile=function(fn) {
@@ -36,6 +57,7 @@ var parseFile=function(fn) {
 		lines=i;
 		arr[i].replace(sutraId,doSutraId);
 		arr[i].replace(pat2,doHead);
+		doConsole();
 
 	}
 }
