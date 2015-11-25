@@ -5,7 +5,7 @@ var bom=String.fromCharCode(0xfeff);
 //var lst=fs.readFileSync(lstfile,"utf8").replace(bom,'').split(/\r?\n/);
 var lastdepth=0;
 var lines;
-var sutraId=/<sutra id="(J\d+[ab]?)".>/g;
+var sutraId=/<sutra id="(J\d+[a-z]?)".>/g;
 var pat2=/<head.*?\/>/g;
 var sutra_arr=[];
 var head_arr=[];
