@@ -3,7 +3,7 @@
 
 步驟:
 
-1.將xml檔放到通一個資料夾中。
+1.將xml檔放到同一個資料夾中。
 
 2.開啟Command Prompt於資料夾路徑中執行npm i glob，
 
